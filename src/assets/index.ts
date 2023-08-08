@@ -1,2 +1,3 @@
 import Logo from "./Logo.svg";
-export { Logo };
+import toggleIc from "./Toggle.svg";
+export { Logo, toggleIc };

@@ -5,6 +5,9 @@ import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import { Logo } from "./assets";
+import Offres from "./sections/Offres";
+import Categories from "./sections/Categories";
+import Dna from "./sections/Dna";
 function App() {
   return (
     <>
@@ -12,6 +15,9 @@ function App() {
         <Navbar Logo={Logo} />
         <Hero />
         <About />
+        <Offres />
+        <Categories />
+        <Dna />
         <Contact />
         <Footer />
       </div>

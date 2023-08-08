@@ -1,3 +1,6 @@
+import { toggleIc } from "../assets";
+import Svg from "./Svg";
+
 interface props {
   toggled: boolean;
   setToggle: () => void;
@@ -11,7 +14,7 @@ function ToggleBurger({ setToggle }: props) {
           setToggle();
         }}
       >
-        Toggle
+        <Svg Class="w-5" src={toggleIc} />
       </div>
     </>
   );
