@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { navLinks } from "../constants/constants";
 import ToggleBurger from "../components/ToggleBurger";
+import Hero from "./Hero";
 interface props {
   Logo: string;
 }
@@ -16,8 +17,9 @@ function Navbar({ Logo }: props) {
           </div>
         ))}
       </nav>
-      <nav className="grid gap-10 ">
-        <div className="flex md:hidden justify-center items-center gap-20 ">
+
+      <nav className="grid md:hidden gap-10 ">
+        <div className="flex  justify-center items-center gap-20 ">
           <img className="cursor-pointer" src={Logo} />
           <ToggleBurger
             toggled={toggled}

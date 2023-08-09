@@ -1,7 +1,6 @@
 #root {
   max-width: 1920;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
@@ -56,4 +55,8 @@ img {
   width: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
+}
+
+.splitbg {
+  background: linear-gradient(to right, #2b2c6b 50%, #ebebff 50%);
 }

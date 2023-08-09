@@ -8,14 +8,7 @@ interface props {
 function ToggleBurger({ setToggle }: props) {
   return (
     <>
-      <div
-        className="cursor-pointer font-bold"
-        onClick={() => {
-          setToggle();
-        }}
-      >
-        <Svg Class="w-5" src={toggleIc} />
-      </div>
+      <img onClick={setToggle} className="w-5 cursor-pointer" src={toggleIc} />
     </>
   );
 }
