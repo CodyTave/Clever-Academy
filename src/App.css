@@ -2,7 +2,7 @@
   max-width: 1920;
   margin: 0 auto;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 img {
   user-select: none;
@@ -59,4 +59,33 @@ img {
 
 .splitbg {
   background: linear-gradient(to right, #2b2c6b 50%, #ebebff 50%);
+}
+@media (max-width: 640px) {
+  .splitbg {
+    background: #2b2c6b;
+  }
+}
+.bounce {
+  animation-name: bouncing;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+@keyframes bouncing {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(-12%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(-12%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

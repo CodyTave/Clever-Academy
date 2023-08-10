@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { navLinks } from "../constants/constants";
 import ToggleBurger from "../components/ToggleBurger";
-import Hero from "./Hero";
 interface props {
   Logo: string;
 }
@@ -9,17 +8,24 @@ function Navbar({ Logo }: props) {
   const [toggled, setToggle] = useState(false);
   return (
     <>
-      <nav className="md:flex hidden justify-around  ">
+      <nav className="xlg:grid hidden grid-cols-6 splitbg p-10 px-32 justify-items-center items-center gap-20 ">
         <img className="cursor-pointer" src={Logo} />
         {navLinks.map((nav) => (
-          <div key={nav.id} className={`${nav.order}  transall cursor-pointer`}>
-            {nav.title}
-          </div>
+          <>
+            <div
+              key={nav.id}
+              className={`${nav.textClr} text-sm transall cursor-pointer text-left `}
+            >
+              {nav.title.split(" ").map((wrd) => (
+                <div>{wrd}</div>
+              ))}
+            </div>
+          </>
         ))}
       </nav>
 
-      <nav className="grid md:hidden gap-10 ">
-        <div className="flex  justify-center items-center gap-20 ">
+      <nav className="grid xlg:hidden transall h-auto gap-10 bg-secondary-0 p-10 ">
+        <div className="flex  justify-center items-center gap-20  ">
           <img className="cursor-pointer" src={Logo} />
           <ToggleBurger
             toggled={toggled}
@@ -29,11 +35,14 @@ function Navbar({ Logo }: props) {
           />
         </div>
         {toggled && (
-          <div className="grid gap-10 font-semibold  ">
+          <div
+            className="grid gap-10 font-semibold transall 
+           "
+          >
             {navLinks.map((nav) => (
               <div
                 key={nav.id}
-                className={`${nav.order}  $hover:text-primary-0  transall cursor-pointer`}
+                className={` fadeInBlur text-light-0 transall cursor-pointer`}
               >
                 {nav.title}
               </div>

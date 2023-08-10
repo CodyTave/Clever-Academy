@@ -12,8 +12,10 @@ function App() {
   return (
     <>
       <div className="grid gap-32">
-        <Navbar Logo={Logo} />
-        <Hero />
+        <div>
+          <Navbar Logo={Logo} />
+          <Hero />
+        </div>
         <About />
         <Offres />
         <Categories />
