@@ -11,16 +11,14 @@ function Navbar({ Logo }: props) {
       <nav className="xlg:grid hidden grid-cols-6 splitbg p-10 px-32 justify-items-center items-center gap-20 ">
         <img className="cursor-pointer" src={Logo} />
         {navLinks.map((nav) => (
-          <>
-            <div
-              key={nav.id}
-              className={`${nav.textClr} text-sm transall cursor-pointer text-left `}
-            >
-              {nav.title.split(" ").map((wrd) => (
-                <div>{wrd}</div>
-              ))}
-            </div>
-          </>
+          <div
+            key={nav.id}
+            className={`${nav.textClr} text-sm transall cursor-pointer text-left hover:opacity-60 `}
+          >
+            {nav.title.split(" ").map((wrd, index) => (
+              <div key={index}>{wrd}</div>
+            ))}
+          </div>
         ))}
       </nav>
 

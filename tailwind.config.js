@@ -8,12 +8,14 @@ export default {
         secondary: ["#2b2c6b", "#916dde"],
         dark: [""],
         light: ["#ebebff"],
+        ph: ["#ababc4"],
       },
       backgroundColor: {
         primary: ["#009fe3"],
         secondary: ["#2b2c6b", "#916dde"],
         dark: [""],
         light: ["#ebebff"],
+        ph: ["#ababc4"],
       },
       screens: {
         sm: "640px",

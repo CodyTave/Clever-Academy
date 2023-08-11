@@ -58,7 +58,7 @@ img {
 }
 
 .splitbg {
-  background: linear-gradient(to right, #2b2c6b 50%, #ebebff 50%);
+  background: linear-gradient(to right, #2b2c6b 50.01%, #ebebff 50%);
 }
 @media (max-width: 640px) {
   .splitbg {
@@ -87,5 +87,18 @@ img {
   }
   100% {
     transform: translateY(0%);
+  }
+}
+
+.carousel {
+  animation: scroll 20s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(100vw);
   }
 }

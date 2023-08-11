@@ -42,7 +42,7 @@ function Hero() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -10, opacity: 0 }}
                 transition={{ duration: 0.8, ease: "backInOut", delay: 0.2 }}
-                className="text-left ml-5 font-light max-w-xl  "
+                className="text-left ml-5 font-light max-w-xl pb-6  "
               >
                 {selectedHero.paragraph}
               </motion.p>
@@ -76,27 +76,38 @@ function Hero() {
           </div>
           <div className="flex md:justify-end justify-center mt-5 gap-2">
             {heroContent.map((hero) => (
-              <span
-                onClick={() => setHero(hero)}
-                className={`h-[5px] w-16 bg-white block transall cursor-pointer
-                  ${
-                    selectedHero.id !== hero.id
-                      ? "opacity-25 w-12"
-                      : "opacity-100 w-16"
-                  }`}
-              ></span>
+              <div key={hero.id} onClick={() => setHero(hero)} className="py-2">
+                <span
+                  className={`h-[5px]  bg-white block transall cursor-pointer
+                ${
+                  selectedHero.id !== hero.id
+                    ? "opacity-25 w-[68px] hover:opacity-50"
+                    : "opacity-100 w-16"
+                }`}
+                ></span>
+              </div>
             ))}
           </div>
         </div>
-        <div className="bg-light-0 text-secondary-0 sm:p-10 p-5 flex justify-center items-center relative overflow-hidden">
-          <img
-            className="  max-w-xl sm:max-w-3xl px-20 select-none fadeInBlur object-cover"
-            src={heroPhotofull}
-          />
-          <img
-            src={dropLogo}
-            className="absolute w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur "
-          />
+        <div className="bg-light-0  sm:p-10 p-5 flex justify-center items-center relative overflow-hidden">
+          <AnimatePresence>
+            <motion.img
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="  max-w-xl sm:max-w-3xl px-20 select-none fadeInBlur object-cover"
+              src={heroPhotofull}
+            />
+          </AnimatePresence>
+          <AnimatePresence>
+            <motion.img
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              src={dropLogo}
+              className="absolute w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur "
+            />
+          </AnimatePresence>
         </div>
       </div>
     </>
