@@ -36,7 +36,7 @@ export const heroContent = [
     id: 1,
     title: (
       <>
-        Diruptive
+        Disruptive
         <br />
         Learning
       </>
