@@ -1,9 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { refs } from "../refs";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 function Refs() {
-  const [references, changeRefs] = useState([]);
   const { ref, inView } = useInView({
     threshold: 0,
   });
