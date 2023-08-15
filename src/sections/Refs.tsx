@@ -1,33 +1,23 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { refs } from "../refs";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { refsDevider } from "../constants/functions";
 function Refs() {
   const { ref, inView } = useInView({
     threshold: 0,
   });
-  function refsDevider(allRefs: { id: string; img: string }[]) {
-    const refs = [];
-    let refsSection: { id: string; img: string }[] = [];
-
-    for (let index = 0; index < allRefs.length; index++) {
-      refsSection.push(allRefs[index]);
-
-      if (refsSection.length === 4 || index === allRefs.length - 1) {
-        while (refsSection.length < 4) {
-          refsSection.push(allRefs[0]);
-        }
-
-        refs.push(refsSection);
-        refsSection = [];
-      }
-    }
-
-    console.log(refs);
-  }
+  const [refsArray] = useState(refsDevider(refs));
+  const [displayedRefs, setRef] = useState(0);
+  const [Hovered, Hover] = useState(false);
   useEffect(() => {
-    refsDevider(refs);
-  }, []);
+    setTimeout(() => {
+      setRef(displayedRefs + 1);
+      if (displayedRefs + 1 === refsArray.length) {
+        setRef(0);
+      }
+    }, 5000);
+  }, [displayedRefs, refsArray.length]);
 
   return (
     <div ref={ref} className="md:flex hidden gap-10 mx-28 mt-24">
@@ -42,18 +32,31 @@ function Refs() {
           />
         )}
       </AnimatePresence>
-      <div className="text-left font-black text-ph-0 text-lg">
+      <div className=" text-left font-black text-ph-0 text-lg">
         ILS NOUS ONT
         <br /> FAIT CONFIANCE
       </div>
-      <div className="w-4/5  flex gap-10 justify-center items-center h-16 overflow-hidden  ">
-        {refs.map((ref) => (
-          <img
-            className=" w-1/4 h-4/6 grayscale hover:grayscale-0 opacity-80 transall "
-            key={ref.id}
-            src={ref.img}
-          />
-        ))}
+      <div className="w-4/5 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="flex justify-around items-center h-16"
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            exit={{ y: "100%", opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            key={displayedRefs}
+          >
+            {refsArray[displayedRefs].map((ref) => (
+              <img
+                onMouseEnter={() => Hover(true)}
+                onMouseLeave={() => Hover(false)}
+                className=" w-28 grayscale hover:grayscale-0 opacity-80 transall "
+                key={ref.id}
+                src={ref.img}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
