@@ -1,14 +1,34 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { refs } from "../refs";
-
+import { useEffect, useState } from "react";
 function Refs() {
+  const [references, changeRefs] = useState([]);
   const { ref, inView } = useInView({
     threshold: 0,
   });
+  function refsDevider(allRefs: { id: string; img: string }[]) {
+    const refs = [];
+    let refsSection: { id: string; img: string }[] = [];
+    for (let index = 0; index < allRefs.length; index++) {
+      if (refsSection.length === 4) {
+        refs.push(refsSection);
+        refsSection = [];
+      } else if (index + 1 === allRefs.length) {
+        console.log(index);
+        refs.push(refsSection);
+      } else {
+        refsSection.push(allRefs[index]);
+      }
+    }
+    console.log(refs);
+  }
+  useEffect(() => {
+    refsDevider(refs);
+  }, []);
 
   return (
-    <div ref={ref} className="flex gap-10 mx-28 mt-24">
+    <div ref={ref} className="md:flex hidden gap-10 mx-28 mt-24">
       <AnimatePresence mode="wait">
         {inView && (
           <motion.div
@@ -24,7 +44,7 @@ function Refs() {
         ILS NOUS ONT
         <br /> FAIT CONFIANCE
       </div>
-      <div className="w-4/5  flex gap-10 justify-center items-center h-16 overflow-auto  ">
+      <div className="w-4/5  flex gap-10 justify-center items-center h-16 overflow-hidden  ">
         {refs.map((ref) => (
           <img
             className=" w-1/4 h-4/6 grayscale hover:grayscale-0 opacity-80 transall "

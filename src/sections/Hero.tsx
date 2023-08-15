@@ -42,7 +42,7 @@ function Hero() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -10, opacity: 0 }}
                 transition={{ duration: 0.8, ease: "backInOut", delay: 0.2 }}
-                className="text-left ml-5 font-light max-w-xl pb-6  "
+                className="text-left ml-5 font-light max-w-xl min-h-[130px]  "
               >
                 {selectedHero.paragraph}
               </motion.p>

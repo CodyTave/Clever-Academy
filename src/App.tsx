@@ -3,6 +3,7 @@ import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import { Logo } from "./assets";
 import Refs from "./sections/Refs";
+import About from "./sections/About";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
           <Hero />
         </div>
         <Refs />
+        <About />
       </div>
     </>
   );

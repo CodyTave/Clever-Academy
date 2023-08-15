@@ -2,7 +2,7 @@ import Logo from "./Logo.svg";
 import toggleIc from "./Toggle.svg";
 import plus from "./plus.svg";
 import arrow from "./arrow.svg";
-import treeDlogo from "./3dLogo.png";
+import threeDlogo from "./3dLogo.png";
 import patter_bg from "./bg-pattern.png";
 import pattern_one from "./pattern1.svg";
 import pattern_two from "./pattern2.svg";
@@ -21,6 +21,6 @@ export {
   patter_bg,
   pattern_one,
   pattern_two,
-  treeDlogo,
+  threeDlogo,
   dropLogo,
 };
