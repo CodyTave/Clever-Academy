@@ -9,17 +9,20 @@ function Refs() {
   function refsDevider(allRefs: { id: string; img: string }[]) {
     const refs = [];
     let refsSection: { id: string; img: string }[] = [];
+
     for (let index = 0; index < allRefs.length; index++) {
-      if (refsSection.length === 4) {
+      refsSection.push(allRefs[index]);
+
+      if (refsSection.length === 4 || index === allRefs.length - 1) {
+        while (refsSection.length < 4) {
+          refsSection.push(allRefs[0]);
+        }
+
         refs.push(refsSection);
         refsSection = [];
-      } else if (index + 1 === allRefs.length) {
-        console.log(index);
-        refs.push(refsSection);
-      } else {
-        refsSection.push(allRefs[index]);
       }
     }
+
     console.log(refs);
   }
   useEffect(() => {
