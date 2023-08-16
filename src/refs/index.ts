@@ -1,12 +1,12 @@
 import altran from "./Altran-logo 1.png";
-// import anac from "./ANAC.png";
+import anac from "./ANAC.png";
 import apix from "./apix.png";
 import cimentMaroc from "./Ciments-du-Maroc-logo 1.png";
 import cpgemini from "./cpgemini 1.png";
 import koutoubia from "./koutoubia 1.png";
 import eslsca from "./Logo-Eslsca 1.png";
 import ghazala from "./logo-ghazala 1.png";
-// import lyautey from "./Lyceelyautey 1.png";
+import lyautey from "./Lyceelyautey 1.png";
 import mecomar from "./mecomar 1.png";
 import num from "./NUM.png";
 import ofppt from "./ofppt 1.png";
@@ -19,7 +19,7 @@ import arcep from "./arcep.png";
 export const refs = [
   { id: "altran", img: altran },
   { id: "engie", img: engie },
-  // { id: "anac", img: anac },
+  { id: "anac", img: anac },
   { id: "apix", img: apix },
   { id: "arcep", img: arcep },
   { id: "cimentMaroc", img: cimentMaroc },
@@ -27,7 +27,7 @@ export const refs = [
   { id: "koutoubia", img: koutoubia },
   { id: "eslsca", img: eslsca },
   { id: "ghazala", img: ghazala },
-  // { id: "lyautey", img: lyautey },
+  { id: "lyautey", img: lyautey },
   { id: "mecomar", img: mecomar },
   { id: "num", img: num },
   { id: "ofppt", img: ofppt },

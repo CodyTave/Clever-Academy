@@ -9,15 +9,23 @@ function Refs() {
   });
   const [refsArray] = useState(refsDevider(refs));
   const [displayedRefs, setRef] = useState(0);
-  const [Hovered, Hover] = useState(false);
+  const [Hovered, setHover] = useState(false);
+  let refsTimeout: number;
+  function handleRefs() {
+    if (!Hovered) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      refsTimeout = setTimeout(() => {
+        setRef(displayedRefs + 1);
+        if (displayedRefs + 1 === refsArray.length) {
+          setRef(0);
+        }
+      }, 6000);
+    }
+  }
   useEffect(() => {
-    setTimeout(() => {
-      setRef(displayedRefs + 1);
-      if (displayedRefs + 1 === refsArray.length) {
-        setRef(0);
-      }
-    }, 5000);
-  }, [displayedRefs, refsArray.length]);
+    handleRefs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [displayedRefs]);
 
   return (
     <div ref={ref} className="md:flex hidden gap-10 mx-28 mt-24">
@@ -43,13 +51,19 @@ function Refs() {
             initial={{ y: "-100%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "anticipate" }}
             key={displayedRefs}
           >
             {refsArray[displayedRefs].map((ref) => (
               <img
-                onMouseEnter={() => Hover(true)}
-                onMouseLeave={() => Hover(false)}
+                onMouseEnter={() => {
+                  setHover(true);
+                  clearTimeout(refsTimeout);
+                }}
+                onMouseLeave={() => {
+                  setHover(false);
+                  handleRefs();
+                }}
                 className=" w-28 grayscale hover:grayscale-0 opacity-80 transall "
                 key={ref.id}
                 src={ref.img}
