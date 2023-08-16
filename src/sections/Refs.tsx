@@ -28,23 +28,25 @@ function Refs() {
   }, [displayedRefs]);
 
   return (
-    <div ref={ref} className="md:flex hidden gap-10 mx-28 mt-24">
-      <AnimatePresence mode="wait">
-        {inView && (
-          <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: 60 }}
-            exit={{ height: -60 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className={` w-[1.5px]  transall bg-primary-0`}
-          />
-        )}
-      </AnimatePresence>
-      <div className=" text-left font-black text-ph-0 text-lg">
-        ILS NOUS ONT
-        <br /> FAIT CONFIANCE
+    <div ref={ref} className="md:flex grid gap-10 md:mx-28 mt-24">
+      <div className="flex gap-10">
+        <AnimatePresence mode="wait">
+          {inView && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: 60 }}
+              exit={{ height: -60 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className={` w-[1.5px]  transall bg-primary-0`}
+            />
+          )}
+        </AnimatePresence>
+        <div className=" text-left font-black text-ph-0 text-lg">
+          ILS NOUS ONT
+          <br className="md:block hidden" /> FAIT CONFIANCE
+        </div>
       </div>
-      <div className="w-4/5 overflow-hidden">
+      <div className="w-4/5 overflow-hidden hidden md:block">
         <AnimatePresence mode="wait">
           <motion.div
             className="flex justify-around items-center h-16"

@@ -95,7 +95,7 @@ function Hero() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="  max-w-xl sm:max-w-3xl px-20 select-none fadeInBlur object-cover"
+              className="  max-w-lg sm:max-w-3xl px-20 select-none fadeInBlur object-cover"
               src={heroPhotofull}
             />
           </AnimatePresence>
@@ -105,7 +105,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               src={dropLogo}
-              className="absolute w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur "
+              className="absolute w-12 sm:w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur "
             />
           </AnimatePresence>
         </div>
