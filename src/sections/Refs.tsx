@@ -19,7 +19,7 @@ function Refs() {
         if (displayedRefs + 1 === refsArray.length) {
           setRef(0);
         }
-      }, 6000);
+      }, 5000);
     }
   }
   useEffect(() => {
