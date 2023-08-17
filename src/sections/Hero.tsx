@@ -9,7 +9,7 @@ function Hero() {
   return (
     <>
       <div className="grid lg:grid-cols-2 -mt-1">
-        <div className="flex flex-col gap-5 text-white py-20 md:px-28 px-16  bg-secondary-0">
+        <div className="flex flex-col gap-5 text-white py-20 md:px-28 sm:px-16 xxs:px-5 px-4  bg-secondary-0">
           <AnimatePresence mode="wait">
             <motion.h1
               key={selectedHero.id}
@@ -17,7 +17,7 @@ function Hero() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -10, opacity: 0 }}
               transition={{ duration: 0.8, ease: "backInOut" }}
-              className="text-6xl text-left font-semibold"
+              className="xxs:text-6xl text-5xl text-left font-semibold transall"
             >
               {selectedHero.title}
             </motion.h1>

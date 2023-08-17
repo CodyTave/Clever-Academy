@@ -23,7 +23,7 @@ function Navbar({ Logo }: props) {
       </nav>
 
       <nav className="grid xlg:hidden transall h-auto gap-10 bg-secondary-0 p-10 ">
-        <div className="flex  justify-center items-center gap-20  ">
+        <div className="flex  justify-center items-center xs:gap-20 xxs:gap-10 gap-4  ">
           <img className="cursor-pointer" src={Logo} />
           <ToggleBurger
             toggled={toggled}

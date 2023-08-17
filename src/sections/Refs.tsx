@@ -12,18 +12,19 @@ function Refs() {
   const [Hovered, setHover] = useState(false);
   let refsTimeout: number;
   function handleRefs() {
-    if (!Hovered) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      refsTimeout = setTimeout(() => {
-        setRef(displayedRefs + 1);
-        if (displayedRefs + 1 === refsArray.length) {
-          setRef(0);
-        }
-      }, 5000);
-    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    refsTimeout = setTimeout(() => {
+      setRef(displayedRefs + 1);
+      if (displayedRefs + 1 === refsArray.length) {
+        setRef(0);
+      }
+    }, 5000);
   }
+
   useEffect(() => {
-    handleRefs();
+    if (!Hovered) {
+      handleRefs();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayedRefs]);
 
@@ -46,14 +47,14 @@ function Refs() {
           <br className="md:block hidden" /> FAIT CONFIANCE
         </div>
       </div>
-      <div className="w-4/5 overflow-hidden hidden md:block">
+      <div className="w-4/5 overflow-hidden hidden lg:block">
         <AnimatePresence mode="wait">
           <motion.div
             className="flex justify-around items-center h-16"
             initial={{ y: "-100%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
-            transition={{ duration: 0.5, ease: "anticipate" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             key={displayedRefs}
           >
             {refsArray[displayedRefs].map((ref) => (
