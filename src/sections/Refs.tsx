@@ -29,8 +29,8 @@ function Refs() {
   }, [displayedRefs]);
 
   return (
-    <div ref={ref} className="md:flex grid gap-10 md:mx-28 mt-24">
-      <div className="flex gap-10">
+    <div ref={ref} className="lg:flex grid gap-10 lg:mx-28 mx-5 mt-24">
+      <div className="flex justify-center gap-10">
         <AnimatePresence mode="wait">
           {inView && (
             <motion.div
@@ -42,12 +42,12 @@ function Refs() {
             />
           )}
         </AnimatePresence>
-        <div className=" text-left font-black text-ph-0 text-lg">
+        <div className="items-center lg:block flex text-left font-black text-ph-0 text-lg">
           ILS NOUS ONT
-          <br className="md:block hidden" /> FAIT CONFIANCE
+          <br className="lg:block hidden" /> FAIT CONFIANCE
         </div>
       </div>
-      <div className="w-4/5 overflow-hidden hidden lg:block">
+      <div className="w-4/5 overflow-hidden lg:block hidden">
         <AnimatePresence mode="wait">
           <motion.div
             className="flex justify-around items-center h-16"
@@ -75,6 +75,30 @@ function Refs() {
           </motion.div>
         </AnimatePresence>
       </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="grid lg:hidden sm:grid-cols-2 justify-items-center gap-5 gap-y-10"
+        >
+          {refsArray[displayedRefs].map((ref) => (
+            <img
+              onMouseEnter={() => {
+                setHover(true);
+                clearTimeout(refsTimeout);
+              }}
+              onMouseLeave={() => {
+                setHover(false);
+                handleRefs();
+              }}
+              className="flex justify-center items-center w-28 grayscale hover:grayscale-0 opacity-80 transall "
+              key={ref.id}
+              src={ref.img}
+            />
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

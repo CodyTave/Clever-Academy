@@ -13,7 +13,7 @@ function App() {
           <Hero />
         </div>
         <Refs />
-        <About />
+        {/* <About /> */}
       </div>
     </>
   );
