@@ -1,6 +1,7 @@
 interface reference {
   id: string;
   img: string;
+  url: string;
 }
 export function refsDevider(allRefs: Array<reference>) {
   const refs: Array<reference[]> = [];

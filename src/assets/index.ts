@@ -10,6 +10,13 @@ import heroPhoto from "./heroPhoto.png";
 import heroPhotofull from "./heroPhotofull.png";
 import gradhat from "./gradhat.png";
 import dropLogo from "./dropLogo.png";
+import defaultOffre from "./defaultOffre.png";
+import diagIcon from "./diagoIcon.png";
+import acaIcon from "./academyIcon.png";
+import eveIcon from "./EventIcon.png";
+import diagPhoto from "./diagPhoto.png";
+import acaPhoto from "./acaPhoto.png";
+import evePhoto from "./eventPhoto.png";
 export {
   Logo,
   toggleIc,
@@ -23,4 +30,11 @@ export {
   pattern_two,
   threeDlogo,
   dropLogo,
+  defaultOffre,
+  acaIcon,
+  diagIcon,
+  eveIcon,
+  acaPhoto,
+  diagPhoto,
+  evePhoto,
 };

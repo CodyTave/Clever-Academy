@@ -4,6 +4,7 @@ import Navbar from "./sections/Navbar";
 import { Logo } from "./assets";
 import Refs from "./sections/Refs";
 import About from "./sections/About";
+import Offre from "./sections/Offre";
 function App() {
   return (
     <>
@@ -13,7 +14,8 @@ function App() {
           <Hero />
         </div>
         <Refs />
-        {/* <About /> */}
+        <About />
+        <Offre />
       </div>
     </>
   );

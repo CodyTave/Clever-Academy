@@ -18,7 +18,7 @@ function Refs() {
       if (displayedRefs + 1 === refsArray.length) {
         setRef(0);
       }
-    }, 5000);
+    }, 10000);
   }
 
   useEffect(() => {
@@ -29,7 +29,10 @@ function Refs() {
   }, [displayedRefs]);
 
   return (
-    <div ref={ref} className="lg:flex grid gap-10 lg:mx-28 mx-5 mt-24">
+    <div
+      ref={ref}
+      className="lg:flex grid gap-10 lg:mx-28 mx-5 mt-12 fadeInBlur"
+    >
       <div className="flex justify-center gap-10">
         <AnimatePresence mode="wait">
           {inView && (
@@ -42,7 +45,7 @@ function Refs() {
             />
           )}
         </AnimatePresence>
-        <div className="items-center lg:block flex text-left font-black text-ph-0 text-lg">
+        <div className="items-center lg:block flex text-left font-black text-ph-0 text-lg ">
           ILS NOUS ONT
           <br className="lg:block hidden" /> FAIT CONFIANCE
         </div>
@@ -59,6 +62,7 @@ function Refs() {
           >
             {refsArray[displayedRefs].map((ref) => (
               <img
+                onClick={() => window.open(ref.url, "_blank")}
                 onMouseEnter={() => {
                   setHover(true);
                   clearTimeout(refsTimeout);
@@ -80,7 +84,7 @@ function Refs() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="grid lg:hidden sm:grid-cols-2 justify-items-center gap-5 gap-y-10"
+          className="grid lg:hidden grid-cols-2 mt-10  justify-items-center gap-5 gap-y-10"
         >
           {refsArray[displayedRefs].map((ref) => (
             <img
@@ -92,7 +96,7 @@ function Refs() {
                 setHover(false);
                 handleRefs();
               }}
-              className="flex justify-center items-center w-28 grayscale hover:grayscale-0 opacity-80 transall "
+              className="flex justify-center items-center sm:w-28 w-16 grayscale hover:grayscale-0 opacity-80 transall "
               key={ref.id}
               src={ref.img}
             />
