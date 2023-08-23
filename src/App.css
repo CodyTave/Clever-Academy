@@ -102,3 +102,32 @@ img {
     transform: translateX(100vw);
   }
 }
+
+.unset {
+  all: unset;
+}
+
+.gradient {
+  background: linear-gradient(
+    0deg,
+    rgb(57, 60, 133) 0%,
+    rgba(9, 9, 121, 0) 100%
+  );
+}
+.gradient2 {
+  background: linear-gradient(180deg, #5b2c74 0%, rgba(9, 9, 121, 0) 100%);
+}
+
+.category-scrollbar::-webkit-scrollbar {
+  height: 5px;
+  width: 3px;
+  background-color: #636496;
+}
+.category-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  width: 3px;
+  background-color: #ebebff;
+}
+.category-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #ababc4;
+}

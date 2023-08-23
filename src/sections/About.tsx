@@ -26,7 +26,7 @@ function About() {
           <h1 className="uppercase text-secondary-1 font-semibold">
             {aboutData.preTitle}
           </h1>
-          <h1 className="uppercase text-secondary-0 font-extrabold text-3xl">
+          <h1 className="uppercase text-secondary-0 font-extrabold text-4xl">
             {aboutData.Title}
           </h1>
           <p className="mt-5 text-secondary-0 font-medium">{aboutData.parag}</p>

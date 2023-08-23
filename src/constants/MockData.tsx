@@ -71,3 +71,67 @@ export const Offres = [
     photo: evePhoto,
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    title:
+      "Database, Business Intelligence, Big Data & Artificial Intelligence",
+    image: "https://source.unsplash.com/500x400/?IT",
+  },
+  {
+    id: 2,
+    title: "Qualité, Lean, Référentiels SI & Tests",
+    image: "https://source.unsplash.com/500x400/?technology",
+  },
+  {
+    id: 3,
+    title: "Langues & Bureautique",
+    image: "https://source.unsplash.com/500x400/?teaching",
+  },
+  {
+    id: 4,
+    title: "Marketing digital, Photo Vidéo, CMS, UX Design",
+    image: "https://source.unsplash.com/500x400/?marketing",
+  },
+  {
+    id: 5,
+    title: "Comptabilité Finance et Contrôle de Gestion",
+    image: "https://source.unsplash.com/500x400/?accounting",
+  },
+  {
+    id: 6,
+    title: "ERP, Développment logiciel, Web et DEVOPS",
+    image: "https://source.unsplash.com/500x400/?devops",
+  },
+  {
+    id: 7,
+    title: "Virtualisation OS, Réseaux, Télécom & Cloud",
+    image: "https://source.unsplash.com/500x400/?network",
+  },
+  {
+    id: 8,
+    title: "Softskills, Leadership et Développement personnel",
+    image: "https://source.unsplash.com/500x400/?skills",
+  },
+  {
+    id: 9,
+    title: "Industrie",
+    image: "https://source.unsplash.com/500x400/?industry",
+  },
+  {
+    id: 10,
+    title: "Sécurité des SI & Risk",
+    image: "https://source.unsplash.com/500x400/?cybersecurity",
+  },
+  {
+    id: 11,
+    title: "Hygiène Santé et Sécurite",
+    image: "https://source.unsplash.com/500x400/?health",
+  },
+  {
+    id: 12,
+    title: "Management de Projet, Agilité et outils collaboratifs",
+    image: "https://source.unsplash.com/500x400/?management",
+  },
+];

@@ -6,6 +6,7 @@ import Refs from "./sections/Refs";
 import About from "./sections/About";
 import Offre from "./sections/Offre";
 import Categories from "./sections/Categories";
+import Dna from "./sections/Dna";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Offre />
         <Categories />
+        <Dna />
       </div>
     </>
   );
