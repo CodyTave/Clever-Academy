@@ -2,7 +2,7 @@ interface props {
   id: number;
   icon: string;
   title: string;
-  spoiler: string;
+  text: string;
   color: string;
   width: string;
 }
@@ -18,7 +18,7 @@ function OffreCard({ offre }: { offre: props }) {
         {offre.title}
       </h1>
       <p className="line-clamp-3 text-left text-sm text-ph-3 transall">
-        {offre.spoiler}
+        {offre.text}
       </p>
     </div>
   );

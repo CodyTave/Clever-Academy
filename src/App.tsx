@@ -5,6 +5,7 @@ import { Logo } from "./assets";
 import Refs from "./sections/Refs";
 import About from "./sections/About";
 import Offre from "./sections/Offre";
+import Categories from "./sections/Categories";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Refs />
         <About />
         <Offre />
+        <Categories />
       </div>
     </>
   );
