@@ -7,6 +7,8 @@ import About from "./sections/About";
 import Offre from "./sections/Offre";
 import Categories from "./sections/Categories";
 import Dna from "./sections/Dna";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 function App() {
   return (
     <>
@@ -20,6 +22,8 @@ function App() {
         <Offre />
         <Categories />
         <Dna />
+        <Contact />
+        <Footer />
       </div>
     </>
   );

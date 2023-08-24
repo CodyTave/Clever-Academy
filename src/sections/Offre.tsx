@@ -95,7 +95,7 @@ function Offre() {
         <div className="mxl:grid hidden grid-cols-2 gap-10 h-fit w-fit ">
           {Offres.map((offre, index) => (
             <div
-              className={`transall border ${
+              className={`transall border  ${
                 selectedOffre === index && " border-ph-0"
               }`}
               key={offre.id}

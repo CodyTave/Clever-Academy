@@ -16,9 +16,10 @@ function About() {
     ),
   };
   return (
-    <div className="block relative sm:my-16 fadeInBlur">
+    <div className="block relative sm:my-16 fadeInBlur transall">
       <img
-        className="absolute hidden lg:block mxl:top-0 top-12 w-[33%] xl:-left-52 -left-24 -z-20 "
+        onContextMenu={(e) => e.preventDefault()}
+        className="absolute hidden hover:ml-10 lg:block mxl:top-0 top-12 w-[33%] xl:-left-52 -left-24 -z-20 transall "
         src={threeDlogo}
       />
       <div className="grid mlg:grid-cols-2 mxl:w-3/4 lg:w-[79%] px-5 lg:px-0 ml-auto mt-10 ">

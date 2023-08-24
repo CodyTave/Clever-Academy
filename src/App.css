@@ -1,5 +1,6 @@
 #root {
   max-width: 1920px;
+  overflow-x: hidden;
   margin: 0 auto;
   text-align: center;
   font-family: "Work Sans", sans-serif;
@@ -51,8 +52,9 @@ img {
   width: 3px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 0px;
   width: 3px;
+  background-color: #2b2c6b;
 }
 ::-webkit-scrollbar-thumb:hover {
 }
@@ -130,4 +132,29 @@ img {
 }
 .category-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #ababc4;
+}
+
+.pilltrans {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 800ms;
+  transition-delay: 100ms;
+}
+.ball1trans {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 810ms;
+  transition-delay: 110ms;
+}
+.ball2trans {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 805ms;
+  transition-delay: 115ms;
+}
+.ball3trans {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 800ms;
+  transition-delay: 118ms;
 }

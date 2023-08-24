@@ -105,7 +105,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
               src={dropLogo}
-              className="absolute w-12 sm:w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur "
+              className="absolute w-12 sm:w-24 xxxl:left-1/3 xxxl:-translate-x-1/2 left-1/4 bounce fadeInBlur transall hover:mb-5 "
             />
           </AnimatePresence>
         </div>
