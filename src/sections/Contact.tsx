@@ -11,7 +11,7 @@ function Contact() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="absolute grid gap-6 -top-16 md:left-32 md:mx-0  sm:mx-32 xs:mx-20 mx-0 xs:p-10 p-5  sm:py-20 py-12 bg-secondary-0 text-left">
+      <div className="absolute grid gap-6 -top-16 md:left-32 md:mx-0  sm:mx-32 sm:w-fit w-full  mx-0 xs:p-10 p-5  sm:py-20 py-12 bg-secondary-0 text-left">
         <div className="block relative">
           <div className="absolute  h-32  w-[2px] hover:h-10 bottom-0 left-0 bg-primary-0 transall " />
           <h1 className="uppercase font-black md:text-3xl xs:text-2xl text-xl text-secondary-3 pl-8">
