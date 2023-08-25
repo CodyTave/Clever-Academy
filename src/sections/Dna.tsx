@@ -40,7 +40,16 @@ function Dna() {
           {adn[selectedAdn].title}
         </h1>
         <div className="flex relative mxl:w-2/5 text-left">
-          <div className="absolute h-40 hover:h-20 w-[2px] -top-20 -left-20 bg-secondary-1 transall  " />
+          <AnimatePresence mode="wait">
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: 160 }}
+              exit={{ height: -160 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              key={selectedAdn}
+              className="absolute h-40 w-[2px] -top-20 -left-20 bg-secondary-1 transall  "
+            />
+          </AnimatePresence>
           <AnimatePresence mode="wait">
             <motion.p
               key={selectedAdn}
@@ -54,13 +63,31 @@ function Dna() {
             </motion.p>
           </AnimatePresence>
           <img
-            className="absolute w-20 -right-5 xlg:top-0 mlg:-top-5 -top-10 transall hover:pl-5 xlg:opacity-100 opacity-50 transall"
+            className="absolute xlg:w-20 w-14 -right-5 xlg:top-0 mlg:-top-5 -top-10 transall hover:pl-5 xlg:opacity-100 opacity-50 transall"
             src={logopattern}
           />
         </div>
         <Pill />
-        <div className="absolute sm:h-20 h-10 w-[2px] -bottom-5 hover:h-10 right-16 sm:right-32 bg-primary-0 transall " />
-        <div className="absolute sm:h-20 h-10  w-[2px] bottom-0 hover:h-10 right-10 sm:right-28 bg-primary-0 transall " />
+        <AnimatePresence>
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: 80 }}
+            exit={{ height: -80 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            key={selectedAdn}
+            className="absolute sm:h-20 h-10 w-[2px] -bottom-5 hover:h-10 right-16 sm:right-32 bg-primary-0 transall "
+          />
+        </AnimatePresence>
+        <AnimatePresence>
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: 80 }}
+            exit={{ height: -80 }}
+            transition={{ duration: 0.8, ease: "backInOut" }}
+            key={selectedAdn}
+            className="absolute sm:h-20 h-10  w-[2px] bottom-0 hover:h-10 right-10 sm:right-28 bg-primary-0 transall"
+          />
+        </AnimatePresence>
       </div>
     </div>
   );

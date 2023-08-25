@@ -10,7 +10,7 @@ function Categories() {
         </h1>
         <div className="flex overflow-auto my-20 category-scrollbar pb-10 transall ">
           {categories.map((cat) => (
-            <CategoryCard img={cat.image} title={cat.title} />
+            <CategoryCard key={cat.id} img={cat.image} title={cat.title} />
           ))}
         </div>
       </div>

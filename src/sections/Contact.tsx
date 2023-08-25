@@ -44,7 +44,7 @@ function Contact() {
             {contactInfo.address}
           </a>
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-5">
           {contactInfo.socialMedia.map((link) => (
             <a target="_blank" href={link.link} key={link.id}>
               <img

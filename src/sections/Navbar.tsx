@@ -22,7 +22,7 @@ function Navbar({ Logo }: props) {
         ))}
       </nav>
 
-      <nav className="grid xlg:hidden transall h-auto gap-10 bg-secondary-0 p-10 ">
+      <nav className="grid xlg:hidden transall h-auto gap-x-10 bg-secondary-0 p-10 ">
         <div className="flex  justify-center items-center xs:gap-20 xxs:gap-10 gap-4  ">
           <img className="cursor-pointer" src={Logo} />
           <ToggleBurger
@@ -32,21 +32,20 @@ function Navbar({ Logo }: props) {
             }}
           />
         </div>
-        {toggled && (
-          <div
-            className="grid gap-10 font-semibold transall 
-           "
-          >
-            {navLinks.map((nav) => (
-              <div
-                key={nav.id}
-                className={` fadeInBlur text-light-0 transall cursor-pointer`}
-              >
-                {nav.title}
-              </div>
-            ))}
-          </div>
-        )}
+        <div
+          className={`grid gap-10 font-semibold overflow-hidden transall -mb-8 ${
+            toggled ? "h-[280px] mt-10" : "h-0 mt-0"
+          } `}
+        >
+          {navLinks.map((nav) => (
+            <div
+              key={nav.id}
+              className={`fadeInBlur text-light-0 transall cursor-pointer`}
+            >
+              {nav.title}
+            </div>
+          ))}
+        </div>
       </nav>
     </>
   );

@@ -9,7 +9,7 @@ function Hero() {
   return (
     <>
       <div className="grid lg:grid-cols-2 -mt-1">
-        <div className="flex flex-col gap-5 text-white py-20 md:px-28 sm:px-16 xxs:px-5 px-4  bg-secondary-0">
+        <div className="flex flex-col gap-5 text-white sm:pt-20 pt-10 pb-20 md:px-28 sm:px-16 xxs:px-5 px-4  bg-secondary-0">
           <AnimatePresence mode="wait">
             <motion.h1
               key={selectedHero.id}

@@ -138,7 +138,7 @@ img {
   transition-property: all;
   transition-timing-function: ease-in-out;
   transition-duration: 800ms;
-  transition-delay: 100ms;
+  transition-delay: 200ms;
 }
 .ball1trans {
   transition-property: all;
@@ -157,4 +157,43 @@ img {
   transition-timing-function: ease-in-out;
   transition-duration: 800ms;
   transition-delay: 118ms;
+}
+
+.ballbounce {
+  animation-name: ballbouncing;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.ball2bounce {
+  animation-name: ballbouncing;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+.ball3bounce {
+  animation-name: ballbouncing;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+@keyframes ballbouncing {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(-4%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  75% {
+    transform: translateY(-4%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

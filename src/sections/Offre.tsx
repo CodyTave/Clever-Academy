@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OffreCard from "../components/OffreCard";
 import { Offres, defaultOffer } from "../constants/MockData";
 import { AnimatePresence, motion } from "framer-motion";
@@ -7,7 +7,8 @@ import { patter_bg } from "../assets";
 function Offre() {
   const [selectedOffre, setOffre] = useState(-1);
   const [isAnimating, setAnimating] = useState(false);
-
+  const respoPhoto =
+    "xlg:min-h-[530px] mlg:min-h-[480px] md:min-h-[390px] xs:min-h-[300px] min-h-[150px]";
   function handleOffres(id: number) {
     if (!isAnimating) {
       if (selectedOffre === id) {
@@ -17,7 +18,6 @@ function Offre() {
       setOffre(id);
     }
   }
-
   return (
     <div className="bg-ph-2 lg:-mt-14 ">
       <div className="grid mxl:grid-cols-2 mxl:mt-36 mt-20 relative">
@@ -59,7 +59,7 @@ function Offre() {
               </div>
             ))}
           </div>
-          <div className="text-ph-3 min-h-[200px] ">
+          <div className="text-ph-3 min-h-[200px]  ">
             <div className="font-bold">
               Nous proposons une offre intégrée pour adresser de manière
               cohérente et globale les besoinsen formation des entreprises
@@ -69,28 +69,30 @@ function Offre() {
               ? defaultOffer.text
               : Offres[selectedOffre].text}
           </div>
-          <AnimatePresence mode="wait">
-            <motion.div
-              className="relative mxl:mt-16"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
-              onAnimationComplete={() => setAnimating(false)}
-              onAnimationStart={() => setAnimating(true)}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              key={selectedOffre}
-            >
-              <img
-                className="w-full  object-cover "
-                src={
-                  selectedOffre === -1
-                    ? defaultOffer.photo
-                    : Offres[selectedOffre].photo
-                }
-              />
-              <div className="absolute top-0 left-0 w-full h-full bg-secondary-0 opacity-40 hover:opacity-20 transall"></div>
-            </motion.div>
-          </AnimatePresence>
+          <div className={respoPhoto}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="relative mxl:mt-16 xxs:w-full  w-60 mx-auto "
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                onAnimationComplete={() => setAnimating(false)}
+                onAnimationStart={() => setAnimating(true)}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                key={selectedOffre}
+              >
+                <img
+                  className="w-full object-cover "
+                  src={
+                    selectedOffre === -1
+                      ? defaultOffer.photo
+                      : Offres[selectedOffre].photo
+                  }
+                />
+                <div className="absolute top-0 left-0 w-full h-full bg-secondary-0 opacity-40 hover:opacity-20 transall"></div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
         <div className="mxl:grid hidden grid-cols-2 gap-10 h-fit w-fit ">
           {Offres.map((offre, index) => (
