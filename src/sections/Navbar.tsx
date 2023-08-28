@@ -1,24 +1,35 @@
+import { Logo } from "../assets";
 import { useState } from "react";
 import { navLinks } from "../constants/constants";
 import ToggleBurger from "../components/ToggleBurger";
+import { Link } from "react-scroll";
 interface props {
-  Logo: string;
+  splitbg: boolean;
 }
-function Navbar({ Logo }: props) {
+function Navbar({ splitbg = false }: props) {
   const [toggled, setToggle] = useState(false);
   return (
     <>
-      <nav className="xlg:grid hidden grid-cols-6 splitbg p-10 px-32 justify-items-center items-center gap-20 ">
+      <nav
+        className={`xlg:grid hidden grid-cols-6 ${
+          splitbg ? "splitbg" : "bg-secondary-0"
+        }  p-10 px-32 justify-items-center items-center gap-20 `}
+      >
         <img className="cursor-pointer" src={Logo} />
         {navLinks.map((nav) => (
-          <div
+          <Link
+            smooth
+            offset={-50}
+            to={nav.id}
             key={nav.id}
-            className={`${nav.textClr} text-sm transall cursor-pointer text-left hover:opacity-60 `}
+            className={`${
+              splitbg ? nav.textClr : "font-semibold text-white"
+            } text-sm transall cursor-pointer text-left hover:opacity-60 `}
           >
             {nav.title.split(" ").map((wrd, index) => (
               <div key={index}>{wrd}</div>
             ))}
-          </div>
+          </Link>
         ))}
       </nav>
 
@@ -38,12 +49,15 @@ function Navbar({ Logo }: props) {
           } `}
         >
           {navLinks.map((nav) => (
-            <div
+            <Link
+              offset={-50}
+              smooth
+              to={nav.id}
               key={nav.id}
               className={`fadeInBlur text-light-0 transall cursor-pointer`}
             >
               {nav.title}
-            </div>
+            </Link>
           ))}
         </div>
       </nav>

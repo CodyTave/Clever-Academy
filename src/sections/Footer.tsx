@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import { LogoWhite } from "../assets";
 import { footerLinks } from "../constants/constants";
 
@@ -6,9 +7,9 @@ function Footer() {
     <footer>
       <div className="bg-secondary-0 text-white py-16 sm:px-32 xs:px-20 px-5">
         <div className="grid xlg:grid-cols-4 mlg:grid-cols-3 sm:grid-cols-2  gap-y-10">
-          <a className="w-fit h-fit" href="/">
+          <Link smooth to="top" className="w-fit h-fit cursor-pointer">
             <img src={LogoWhite} />
-          </a>
+          </Link>
           {footerLinks.map((item) => (
             <div key={item.id}>
               <h1 className="text-left uppercase font-semibold opacity-90">

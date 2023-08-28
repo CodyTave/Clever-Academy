@@ -3,7 +3,7 @@ import { categories } from "../constants/MockData";
 
 function Categories() {
   return (
-    <div className=" bg-secondary-0 -mt-20">
+    <div id="formations" className=" bg-secondary-0 -mt-20">
       <div className="grid mt-32 sm:px-32 xs:px-20 px-5">
         <h1 className="uppercase text-left text-4xl font-black text-white">
           Categories

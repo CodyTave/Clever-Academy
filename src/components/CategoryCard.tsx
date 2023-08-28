@@ -4,7 +4,7 @@ interface props {
 }
 function CategoryCard({ img, title }: props) {
   return (
-    <div className="block h-72 sm:min-w-[260px] min-w-[220px] force-width relative">
+    <div className="block h-72 sm:min-w-[260px] min-w-[220px] force-width relative select-none">
       <img className=" object-cover w-full h-full select-none " src={img} />
       <h1 className="absolute bottom-5  font-semibold text-white px-4 text-left z-30 select-none ">
         {title}

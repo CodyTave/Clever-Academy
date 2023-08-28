@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import OffreCard from "../components/OffreCard";
 import { Offres, defaultOffer } from "../constants/MockData";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,7 +19,7 @@ function Offre() {
     }
   }
   return (
-    <div className="bg-ph-2 lg:-mt-14 ">
+    <div id="offre" className="bg-ph-2 lg:-mt-14 ">
       <div className="grid mxl:grid-cols-2 mxl:mt-36 mt-20 relative">
         <div className="grid text-left md:px-32 px-5 gap-3 ">
           <AnimatePresence mode="wait">

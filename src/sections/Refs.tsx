@@ -30,6 +30,7 @@ function Refs() {
 
   return (
     <div
+      id="refs"
       ref={ref}
       className="lg:flex grid gap-10 lg:mx-28 mx-5 mt-12 fadeInBlur"
     >

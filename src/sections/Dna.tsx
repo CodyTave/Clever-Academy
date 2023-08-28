@@ -7,7 +7,7 @@ import Pill from "../components/Pill";
 function Dna() {
   const [selectedAdn, setAdn] = useState(0);
   return (
-    <div className="sm:px-32 xs:px-20 px-5 sm:my-20 my-10">
+    <div id="adn" className="sm:px-32 xs:px-20 px-5 sm:my-20 my-10">
       <h1 className="uppercase text-left font-black text-secondary-0 text-4xl">
         Notre ADN
       </h1>

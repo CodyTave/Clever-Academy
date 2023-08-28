@@ -1,11 +1,23 @@
 import { arrow, dropLogo, heroPhotofull, plus } from "../assets";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { heroContent } from "../constants/constants";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 function Hero() {
   const [selectedHero, setHero] = useState(heroContent[0]);
   const [Hovered, Hover] = useState(0);
+  const timeout = useRef(0);
+  useEffect(() => {
+    timeout.current = setTimeout(() => {
+      if (selectedHero.id === 2) {
+        setHero(heroContent[0]);
+      } else if (selectedHero.id === 1) {
+        setHero(heroContent[1]);
+      }
+    }, 10000);
+  }, [selectedHero]);
+
   return (
     <>
       <div className="grid lg:grid-cols-2 -mt-1">
@@ -27,10 +39,10 @@ function Hero() {
               <motion.div
                 key={selectedHero.id}
                 initial={{ height: 0 }}
-                animate={{ height: 380 }}
-                exit={{ height: -380 }}
+                animate={{ height: 384 }}
+                exit={{ height: -384 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={`absolute w-[1.5px] h-96 transall ${
+                className={`absolute w-[1.5px]  transall ${
                   selectedHero.id === 2 ? "bg-primary-0" : "bg-secondary-1"
                 } top-0`}
               />
@@ -48,35 +60,46 @@ function Hero() {
               </motion.p>
             </AnimatePresence>
             <div className="flex mxl:flex-row flex-col">
-              <button
-                onMouseEnter={() => Hover(1)}
-                onMouseLeave={() => Hover(0)}
-                className="bg-primary-0 p-5 w-52 flex items-center justify-between gap-2 ml-5 mt-5"
-              >
-                <span className="font-semibold">Contactez Nous</span>
-                <img
-                  className={`w-4 transall ${
-                    Hovered === 1 && "-translate-x-2"
-                  }`}
-                  src={arrow}
-                />
-              </button>
-              <button
-                onMouseEnter={() => Hover(2)}
-                onMouseLeave={() => Hover(0)}
-                className="bg-secondary-1 p-5 w-52 flex items-center justify-between gap-2 ml-5 mt-5"
-              >
-                <span className="font-semibold">Nos Offres</span>
-                <img
-                  className={`w-4 transall ${Hovered === 2 && "rotate-180"}`}
-                  src={plus}
-                />
-              </button>
+              <Link smooth to="contact">
+                <button
+                  onMouseEnter={() => Hover(1)}
+                  onMouseLeave={() => Hover(0)}
+                  className="bg-primary-0 p-5 w-52 flex items-center justify-between gap-2 ml-5 mt-5"
+                >
+                  <span className="font-semibold">Contactez Nous</span>
+                  <img
+                    className={`w-4 transall ${
+                      Hovered === 1 && "-translate-x-2"
+                    }`}
+                    src={arrow}
+                  />
+                </button>
+              </Link>
+              <Link smooth to="offre">
+                <button
+                  onMouseEnter={() => Hover(2)}
+                  onMouseLeave={() => Hover(0)}
+                  className="bg-secondary-1 p-5 w-52 flex items-center justify-between gap-2 ml-5 mt-5"
+                >
+                  <span className="font-semibold">Nos Offres</span>
+                  <img
+                    className={`w-4 transall ${Hovered === 2 && "rotate-180"}`}
+                    src={plus}
+                  />
+                </button>
+              </Link>
             </div>
           </div>
           <div className="flex md:justify-end justify-center mt-5 gap-2">
             {heroContent.map((hero) => (
-              <div key={hero.id} onClick={() => setHero(hero)} className="py-2">
+              <div
+                key={hero.id}
+                onClick={() => {
+                  clearTimeout(timeout.current);
+                  setHero(hero);
+                }}
+                className="py-2"
+              >
                 <span
                   className={`h-[5px]  bg-white block transall cursor-pointer
                 ${

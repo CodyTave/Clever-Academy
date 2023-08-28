@@ -3,7 +3,7 @@ import { contactInfo } from "../constants/constants";
 
 function Contact() {
   return (
-    <div className="mt-20 h-[460px] relative">
+    <div id="contact" className="mt-20 h-[460px] relative">
       <iframe
         className="w-full h-full  border-0"
         src={contactInfo.map}
